@@ -70,13 +70,13 @@
     margin-bottom: 10px;
     font-size: 48px;
     line-height: 72px;
-    font-weight: 700;
+    @include f700;
   }
   &-text {
     margin-bottom: 50px;
     font-size: 20px;
     line-height: 30px;
-    font-weight: 500;
+    @include f500;
   }
   &-form {
     max-width: 670px;
@@ -90,7 +90,7 @@
       height: 56px;
       border: none;
       font-size: 14px;
-      font-weight: 500;
+      @include f500;
       padding-left: 25px;
       padding-right: 60px;
       // outline: none;
@@ -99,7 +99,7 @@
       // }
       &::placeholder {
         color: #90a4ae;
-        font-weight: 500;
+        @include f500;
       }
     }
     button {
@@ -167,7 +167,7 @@
   &-title {
     display: block;
     color: $bg;
-    font-weight: 500;
+    @include f500;
     font-size: 18px;
   }
   &-category {
@@ -178,7 +178,7 @@
   &-price {
     font-size: 20px;
     color: $bg;
-    font-weight: 700;
+    @include f700;
   }
   &-info {
     display: flex;
@@ -203,7 +203,7 @@
     }
     span {
       font-size: 14px;
-      font-weight: 500;
+      @include f500;
     }
   }
   &-star {
@@ -235,29 +235,107 @@
 // start-product-slider
 .product-slider {
   padding: 110px 0 120px;
-  .slick-dots{
+  .slick-dots {
     text-align: center;
     margin-top: 50px;
-    li{
-    display: inline-block;
-    margin-left: 3px;
-    margin-right: 3px;
-    &.slick-active{
-      button{
-        background-color: $green;
+    li {
+      display: inline-block;
+      margin-left: 3px;
+      margin-right: 3px;
+      &.slick-active {
+        button {
+          background-color: $green;
+        }
       }
     }
-    }
-    button{
-    border-radius: 50%;
-    background-color: rgb(232, 232, 232);
-    border: none;
-    font-size: 0;
-    width: 16px;
-    height: 16px;
-    cursor: pointer;
-    outline: none;
+    button {
+      border-radius: 50%;
+      background-color: rgb(232, 232, 232);
+      border: none;
+      font-size: 0;
+      width: 16px;
+      height: 16px;
+      cursor: pointer;
+      outline: none;
     }
   }
 }
-// end-product-slider 
+// end-product-slider
+
+// star-advantages
+.advantages {
+  background-color: $bg;
+  padding: 110px 0;
+}
+.advantages__title {
+  color: #fff;
+}
+.title {
+}
+.advantages__inner {
+  display: flex;
+  justify-content: space-between;
+}
+.advantages__item {
+  max-width: 370px;
+  text-align: center;
+  padding: 0 15px;
+  &:hover{
+    .advantages__item-images{
+      background-color: $green;
+      g{
+        fill:#fff;
+      }
+    }
+    .advantages__item-title{
+      color: $green;
+    }
+  }
+  &-images {
+    width: 114px;
+    height: 114px;
+    background-color: #fff;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto 30px;
+    transition: all .5s;
+    g{
+      transition: all .5s; 
+    }
+  }
+  &-title {
+    color: #fff;
+    margin-bottom: 25px;
+    font-size: 24px;
+    @include f500;
+    transition: all .5s;
+  }
+  &-text {
+    font-size: 15px;
+  }
+}
+.icosvg-1{
+  svg{
+    width: 50px; 
+  }
+}
+.icosvg-2{
+  svg{
+    width: 70px; 
+  }
+  
+}
+.icosvg-3{
+  svg{
+    width: 86px; 
+  }
+}
+.advantages__item-images {
+}
+.advantages__item-title {
+}
+.advantages__item-text {
+}
+// end-advantages
