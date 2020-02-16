@@ -6,6 +6,10 @@ html {
 *::after {
   box-sizing: inherit;
 }
+html,
+body {
+  height: 100%;
+}
 a {
   display: inline-block;
   text-decoration: none;
@@ -23,6 +27,17 @@ body {
   font-size: 15px;
   line-height: 24px;
   color: $text;
+}
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
 }
 .container {
   max-width: 1200px;
@@ -42,17 +57,50 @@ body {
   }
 }
 
-
-.title{
-    text-align: center;
-    color: $bg; 
-    @include f700;
-    font-size: 36px;
-    line-height: 60px;
-    margin-bottom: 30px; 
+.page-content{
+  background-color: $grey;
 }
 
-.rate-star{
+.title {
+  text-align: center;
+  color: $bg;
+  @include f700;
+  font-size: 36px;
+  line-height: 60px;
+  margin-bottom: 30px;
+}
+
+.rate-star {
   display: inline-block;
   margin-right: 13px;
 }
+
+.breadcrumbs {
+  &__inner {
+    padding: 45px 0 40px;
+  }
+  &__list {
+    li {
+      display: inline-block;
+      position: relative;
+      & + li {
+        padding-left: 24px;
+        &::before {
+          content: "-";
+          position: absolute;
+          left: 8px;
+          color: $green;
+        }
+      }
+      &:last-child {
+        a,
+        span {
+          color: $bg;
+        }
+      }
+    }
+    a {
+      color: #b0bec5;
+    }
+  }
+} 
