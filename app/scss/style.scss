@@ -32,7 +32,8 @@
 .header__btn-login {
   background-color: $green;
 }
-.header__btn-register {
+.header__btn-register,
+.header__btn-logout {
   background-color: $red;
   margin-left: 7px;
 }
@@ -57,7 +58,255 @@
     font-size: 14px;
   }
 }
+.header__circle {
+  &.active {
+    display: block;
+  }
+  display: none;
+  width: 34px;
+  height: 34px;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #a0a0a0;
+    font-size: 14px;
+  }
+  span {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 18px;
+    right: -7px;
+    top: -7px;
+    font-size: 11px;
+    color: #fff;
+  }
+}
+.header__box {
+  display: flex;
+  align-items: center;
+}
+.notification {
+  span {
+    background-color: $yellow;
+  }
+}
+.message {
+  span {
+    background-color: $tomato;
+  }
+}
+.basket {
+  span {
+    background-color: $green;
+  }
+}
+.header__btn-login--off {
+  display: none;
+}
+.header__btn-logout {
+  display: none;
+  &.header__btn-login--on {
+    display: block;
+  }
+}
 
+.user {
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-right: 20px;
+  position: relative;
+  &::before {
+    content: "\f107";
+    font-family: "icomoon";
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 16px;
+    color: #707070;
+  }
+  &__inner {
+    display: flex;
+    align-items: center;
+  }
+  &__images {
+    margin-right: 15px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  &__info {
+    font-size: 14px;
+    line-height: 24px;
+  }
+  &__name {
+    @include f500;
+    color: #222;
+  }
+  &__maney {
+    color: $green;
+    @include f700;
+  }
+}
+.user__menu {
+  top: 69px;
+  left: 20px;
+  border: 0px solid rgb(204, 204, 204);
+  position: absolute;
+  background-color: #fff;
+  padding: 0 20px;
+  width: 158px;
+  transition: all 0.3s;
+  overflow: hidden;
+  height: 0;
+  a {
+    font-size: 12px;
+    color: #546e7a;
+    margin-bottom: 15px;
+  }
+}
+
+.user__box {
+  position: relative;
+  height: 90px;
+  margin-top: 40px;
+  &:hover {
+    .user__menu {
+      height: auto;
+      border-width: 1px;
+      padding: 20px;
+      overflow: auto;
+    }
+  }
+}
+
+.circle__menu {
+  position: absolute;
+  top: 62px;
+  right: 0;
+  border: 0px solid #e0e0e0;
+  height: 0;
+  overflow: hidden;
+  transition: all, 0.3s;
+}
+
+.basket__box,
+.notification__box,
+.message__box {
+  position: relative;
+  height: 90px;
+  margin-top: 54px;
+  margin-left: 15px;
+  &:hover {
+    .header__circle::before{
+      color: $bg;
+    }
+    .circle__menu {
+      height: auto;
+      overflow: hidden;
+    }
+    .circle__item {
+      padding: 23px;
+      border-width: 1px;
+    }
+  }
+}
+.circle__item {
+  border: 0px solid #e0e0e0;
+  background-color: #fff;
+  border-left-width: 1px;
+  border-right-width: 1px;
+  border-top: none;
+  padding: 0 23px;
+  display: flex;
+  align-items: center;
+  width: 269px;
+  transition: all, 0.3s;
+  position: relative;
+  &::before {
+    position: absolute;
+    top: 27px;
+    right: 28px;
+    color: #b0bec5;
+    font-size: 16px;
+  }
+}
+.circle__images {
+  margin-right: 15px;
+}
+.circle__info {
+  &-name {
+    @include f500;
+    color: $bg;
+  }
+  &-thema {
+    font-size: 12px;
+    color: $green;
+  }
+  &-price {
+    @include f500;
+    color: #000;
+    font-size: 16px;
+  }
+  &-date {
+    color: #707070;
+    font-size: 10px;
+  }
+}
+.basket__summ {
+  padding: 16px 17px 12px;
+  border: 1px solid #e0e0e0;
+  background-color: #fff;
+}
+.basket__title {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 13px;
+  padding-right: 22px;
+  margin-bottom: 15px;
+  @include f700;
+  font-size: 16px;
+  color: $bg;
+}
+.basket__btn {
+  @include f700;
+  color: #fff;
+  font-size: 14px;
+  padding: 12px 5px;
+  background-color: $green;
+  text-align: center;
+  width: 100px;
+}
+.basket__btn-checkout {
+  width: 120px;
+  margin-left: 6px;
+  background-color: $red;
+}
+.notification__menu,
+.message__menu {
+  .circle__images {
+    margin-right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+  }
+  .circle__info {
+    line-height: 18px;
+  }
+}
+.icons-color {
+  color: $tomato;
+}
+// end-header
+// start-search
 .search {
   background-repeat: no-repeat;
   background-size: cover;
@@ -104,10 +353,6 @@
       @include f500;
       padding-left: 25px;
       padding-right: 60px;
-      // outline: none;
-      // &:focus{
-      //   border: 1px solid $red;
-      // }
       &::placeholder {
         color: #90a4ae;
         @include f500;
@@ -122,7 +367,7 @@
     }
   }
 }
-// end-header
+// end-search
 // start-products
 .products {
   padding: 110px 0;
@@ -486,13 +731,7 @@
     margin-bottom: 13px;
     padding-left: 22px;
     color: #b7c3c8;
-    position: relative;
     &::before {
-      content: "\f105";
-      font-family: "icomoon";
-      position: absolute;
-      left: 0;
-      color: $green;
       font-size: 18px;
     }
   }
@@ -751,9 +990,8 @@
 }
 .irs--flat .irs-handle {
   top: 19px;
-} 
+}
 // end-product-page__aside
-
 
 // start-product-page__content
 .product-page__content {
@@ -790,7 +1028,7 @@
   }
 }
 .product__item {
-  transition: all, 0.5s; 
+  transition: all, 0.5s;
   .product__item-starnum {
     font-size: 12px;
     color: #b0bec5;
@@ -830,7 +1068,7 @@
     .product__item-list {
       display: block;
     }
-    .product__item-star{
+    .product__item-star {
       margin-left: auto;
       margin-right: 30px;
     }
@@ -842,16 +1080,16 @@
     padding-right: 30px;
     border-left: 1px solid #aeb4bb;
     position: relative;
-    &::before{
+    &::before {
       color: $green;
-      font-size: 16px; 
+      font-size: 16px;
       position: absolute;
       left: 20px;
     }
   }
-  .icon-comment-o{
+  .icon-comment-o {
     padding-right: 30px;
-  } 
+  }
 }
 .product-page__items {
   display: flex;
@@ -919,5 +1157,5 @@ button.icon-unsorted {
     }
   }
 }
-// end-product-page__content 
+// end-product-page__content
 // end-product-page

@@ -1,7 +1,4 @@
-$(function () {
-
-
-
+$(function () { 
     $(".rate-star").rateYo({
         rating: 5,
         starWidth: "12px",
@@ -16,8 +13,7 @@ $(function () {
     });
 
     $(".js-range-slider").ionRangeSlider({
-        type: "double",
-        // grid: true,
+        type: "double", 
         min: 0,
         max: 1000,
         from: 0,
