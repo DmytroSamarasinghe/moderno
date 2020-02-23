@@ -1357,7 +1357,141 @@ button.icon-unsorted {
 }
 .product-one__aside {
 }
-// end-product-one
+.aside__item {
+}
+.aside__title {
+}
+.price__box {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px 0;
+}
+.price__product {
+  font-size: 22px;
+  @include f500;
+  color: $red;
+}
+.product__price {
+  button {
+    margin-bottom: 7px;
+    box-shadow: 0px 1px 2px 0px rgba(69, 90, 100, 0.75);
+    border: none;
+    background-color: $text;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 700;
+    font-family: "Roboto", sans-serif !important;
+    padding: 17px 5px 15px;
+    width: 100%;
+    cursor: pointer;
+    &::before {
+      font-weight: 400;
+      padding-right: 8px;
+      font-family: "icomoon";
+    }
+  }
+  .icon-shopping-cart {
+    background-color: $green;
+  }
+  .icon-heart-o {
+    background-color: #42a5f5;
+  }
+}
+.product-author__box {
+  padding: 25px 0;
+  display: flex;
+  align-items: center;
+}
+.author__avatar {
+  margin-right: 14px;
+}
+.author__info {
+}
+.author__name {
+  font-size: 18px;
+  color: $bg;
+  margin-bottom: 2px;
+}
+.author__info-link {
+  font-size: 13px;
+  color: #707070;
+  padding: 6px 9px 5px;
+  border: 1px soolid #d6d6d6;
+}
+.author__awards-list {
+  li {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    text-align: center;
+    position: relative;
+    &::before {
+      position: absolute;
+      top: 6px;
+      left: 0;
+      right: 0;
+    }
+    & + li {
+      margin-left: 3px;
+    }
+  }
+}
+.icon-meh-o {
+  background-image: url(../images/awards/user-i_1.png);
+  width: 34px;
+  height: 37px;
+}
+.icon-pagelines {
+  background-image: url(../images/awards/user-i_2.png);
+  width: 34px;
+  height: 37px;
+}
+.icon-bolt {
+  background-image: url(../images/awards/user-i_3.png);
+  width: 34px;
+  height: 37px;
+}
+.icon-foursquare {
+  background-image: url(../images/awards/user-i_4.png);
+  width: 34px;
+  height: 37px;
+}
+.icon-cny {
+  background-image: url(../images/awards/user-i_5.png);
+  width: 34px;
+  height: 37px;
+}
+.aside__item-sales {
+  padding-top: 23px;
+  font-size: 16px;
+  @include f300;
+  color: #707070;
+  span {
+    font-size: 20px;
+    @include f700;
+    color: #263238;
+    padding-right: 13px;
+    &::before {
+      content: "\f07a";
+      font-family: "icomoon";
+      color: #a6b5bb;
+      padding-right: 20px;
+    }
+  }
+}
+.aside__item.sales-number {
+  padding-bottom: 25px;
+}
+.information__line {
+  font-size: 14px;
+  color: #70838d;
+  margin-top: 20px;
+  line-height: 18px;
+  span {
+    color: $bg;
+    @include f500;
+  }
+}
 
 //adaptiv
 @import "media";
