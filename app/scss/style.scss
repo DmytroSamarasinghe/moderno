@@ -2214,9 +2214,7 @@ button.icon-unsorted {
 }
 
 // end upload
-// start-withdrawals
-.withdrawals {
-}
+// start-withdrawals 
 .withdrawals__inner {
   display: flex;
   justify-content: space-between;
@@ -2228,9 +2226,7 @@ button.icon-unsorted {
   height: 100%;
   background-color: #fff;
   border: 1px solid #dedede;
-}
-.withdrawals__box {
-}
+} 
 .withdrawals__title {
   @include f500;
   font-size: 24px;
@@ -2240,8 +2236,8 @@ button.icon-unsorted {
   color: $bg;
 }
 .withdrawals__content {
-  margin-left: 35px;
-  margin-right: 40px;
+  padding-left: 35px;
+  padding-right: 40px;
   button {
     margin-bottom: 50px;
     color: #ffffff;
