@@ -10,6 +10,31 @@ $(function () {
         arrows: false,
         slidesToShow: 4,
         slidesToScroll: 4,
+        responsive: [
+            {
+                breakpoint: 1900,
+                settings: {
+                    slidesToShow: 3,
+                    slidesToScroll: 3,
+                    infinite: true,
+                    dots: true
+                }
+            },
+            {
+                breakpoint: 1441,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1, 
+                }
+            },
+            {
+                breakpoint: 801,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,  
+                }
+            },
+        ]
     });
 
     $(".js-range-slider").ionRangeSlider({
@@ -32,16 +57,16 @@ $(function () {
         $('.icon-th-large').addClass('active');
     });
 
-    $('.product-one__tabs .tab, .settins__tabs .tab').on('click', function(event) {
+    $('.product-one__tabs .tab, .settins__tabs .tab').on('click', function (event) {
         var id = $(this).attr('data-id');
-            $('.product-one__tabs, .settins__tabs').find('.tab-item').removeClass('active-tab').hide();
-            $('.product-one__tabs .tabs, .settins__tabs .tabs').find('.tab').removeClass('active');
-            $(this).addClass('active');
-            $('#'+id).addClass('active-tab').fadeIn();
-            return false;
-        });
+        $('.product-one__tabs, .settins__tabs').find('.tab-item').removeClass('active-tab').hide();
+        $('.product-one__tabs .tabs, .settins__tabs .tabs').find('.tab').removeClass('active');
+        $(this).addClass('active');
+        $('#' + id).addClass('active-tab').fadeIn();
+        return false;
+    });
 
-        $('input[type="file"], select').styler();
+    $('input[type="file"], select').styler();
 
 
     $('.menu__btn').on('click', function () {
@@ -52,6 +77,6 @@ $(function () {
     $('.header__btn-menu').on('click', function () {
         $('.header__box').toggleClass('active');
     });
-    
+
     var mixer = mixitup('.products__inner-box');
 });
